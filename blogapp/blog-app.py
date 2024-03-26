@@ -37,6 +37,7 @@ def homepage():
     </html>
     """
 
+# maps specific  url to a function
 @app.route('/posts/<int:post_id>')
 def show_post(post_id):
     post = posts[post_id - 1]  # adjusting index since post_id starts from 1
@@ -53,7 +54,8 @@ def show_post(post_id):
             <a href="/">Back to Home</a>
         </body>
     </html>
-    """.format(title=post['title'], content=post['content'], author=post['author'], date_posted=post['date_posted'])
+    """
 
+# dunderscore check below
 if __name__ == '__main__':
     app.run(debug=True)
